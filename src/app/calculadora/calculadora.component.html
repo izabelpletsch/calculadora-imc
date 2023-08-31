@@ -1,0 +1,19 @@
+<div class="conteudo-calculadora">
+    <h1>Calculadora de IMC</h1>
+
+    <form (ngSubmit)="calcularIMC()">
+        <label for="peso">Peso (em kg):</label>
+        <input type="number" id="peso" [(ngModel)]="peso" name="peso" required>
+
+        <label for="altura">Altura (em cm):</label>
+        <input type="number" id="altura" [(ngModel)]="altura" name="altura" required>
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    <div class="resultado" *ngIf="result">
+        <p>Seu IMC é: {{result}}</p>
+        <p id="classe" class={{classificacao.classe}}>{{classificacao.nome}}</p>
+        <img src={{classificacao.imagem}}/>
+    </div>
+</div>
